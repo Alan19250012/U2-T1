@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cotizador de Servicios Web</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <main class="contenedor">
+    <h1>Cotizador de Servicios Web</h1>
+    <p class="descripcion">
+      Llena el formulario y el sistema calcula el costo de tu proyecto de desarrollo web.
+    </p>
+
+    <form id="formularioCotizacion">
+      <div class="campo">
+        <label for="cliente">Nombre del cliente</label>
+        <input type="text" id="cliente" required>
+      </div>
+
+      <div class="campo">
+        <label for="proyecto">Nombre del proyecto</label>
+        <input type="text" id="proyecto" required>
+      </div>
+
+      <div class="fila">
+        <div class="campo">
+          <label for="paginas">Cantidad de paginas</label>
+          <input type="number" id="paginas" min="1" required>
+        </div>
+
+        <div class="campo">
+          <label for="precioPagina">Precio por pagina ($)</label>
+          <input type="number" id="precioPagina" min="0" step="0.01" required>
+        </div>
+      </div>
+
+      <div class="fila">
+        <div class="campo">
+          <label for="horas">Horas adicionales de desarrollo</label>
+          <input type="number" id="horas" min="0" required>
+        </div>
+
+        <div class="campo">
+          <label for="precioHora">Precio por hora ($)</label>
+          <input type="number" id="precioHora" min="0" step="0.01" required>
+        </div>
+      </div>
+
+      <button type="submit" class="boton">Calcular cotizacion</button>
+    </form>
+
+    <section id="resultado" class="oculto" aria-live="polite">
+      <h2>Ultima cotizacion</h2>
+      <div id="contenidoResultado"></div>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
